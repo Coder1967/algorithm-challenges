@@ -45,6 +45,7 @@ void print_list(node *head)
 int main(void) 
 { 
     	node *head = (node *) malloc(sizeof(node));
+	node *ptr;
 
        	head->data = 60;   
       	head->link = NULL; 
@@ -57,7 +58,10 @@ int main(void)
     
 	box1->link = box2; 
     	box2->data = 654;  
-     	box2->link = NULL;  
-   print_list(del_first_node(head)); 
-   return (0);
+     	box2->link = NULL; 
+	ptr = del_first_node(head);
+	print_list(ptr);
+     	free(box1);
+	free(box2);
+	return (0);
 }
